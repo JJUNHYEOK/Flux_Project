@@ -1,0 +1,5 @@
+.env
+*.txt
+*.csv
+
+./srcs/gemini_api/__pycache__
