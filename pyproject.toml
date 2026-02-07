@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flux-cli"
+version = "1.1.0"
+description = "AI-powered Dependency Solver"
+dependencies = [
+    "google-genai",
+    "openai",
+    "anthropic",
+    "rich",
+    "python-dotenv"
+]
+
+[project.scripts]
+flux = "flux_cli.main:main"
+
+[tool.setuptools]
+packages = ["flux_cli"]

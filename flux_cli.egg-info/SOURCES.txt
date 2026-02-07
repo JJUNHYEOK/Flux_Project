@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+flux_cli/__init__.py
+flux_cli/ai_critic.py
+flux_cli/ai_solver.py
+flux_cli/main.py
+flux_cli/safety_guard.py
+flux_cli/system_scanner.py
+flux_cli.egg-info/PKG-INFO
+flux_cli.egg-info/SOURCES.txt
+flux_cli.egg-info/dependency_links.txt
+flux_cli.egg-info/entry_points.txt
+flux_cli.egg-info/requires.txt
+flux_cli.egg-info/top_level.txt

@@ -12,6 +12,7 @@ class AISolver:
         self.model_name = "gemini-3-flash-preview"
 
     def generate_solution(self, context, error_log):
+        # 프롬프트는 그대로 두셔도 됩니다.
         prompt = f"""
         You are a DevOps Expert. Solve this Python environment error.
         
@@ -23,6 +24,8 @@ class AISolver:
         
         [Task]
         Provide 3 solutions in STRICT JSON format.
+        IMPORTANT: The output must be a JSON Object containing 'analysis' and 'solutions'.
+        
         Schema:
         {{
             "analysis": "Root cause summary",
@@ -42,10 +45,19 @@ class AISolver:
                 )
             )
             
-            return json.loads(response.text)
+            data = json.loads(response.text)
+
+            if isinstance(data, list):
+                return {
+                    "analysis": "Analysis generated directly from solutions.",
+                    "solutions": data
+                }
+                
+            return data
             
         except Exception as e:
+     
             return {
-                "analysis": f"API Error: {str(e)}", 
+                "analysis": f"AI Parsing Error: {str(e)}", 
                 "solutions": []
             }

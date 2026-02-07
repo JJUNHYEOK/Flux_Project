@@ -1,6 +1,10 @@
 # 🚀 FLUX : Fast-Local-Unified eXecution
 
 <img src="pic/flux_ai_removed.png" width="50%">
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
+![Gemini](https://img.shields.io/badge/Solver-Gemini%202.0%20Flash-4285F4?logo=google)
+![Claude](https://img.shields.io/badge/Critic-Claude%203%20Haiku-D97757?logo=anthropic)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 💡 Description
 Flux는 개발자가 패키지 의존성 문제나 환경 설정 오류로 인해 겪는 흐름의 단절을 방지하기 위해 설계된 **AI 기반 로컬 환경 최적화 에이전트**입니다.
@@ -15,34 +19,25 @@ Flux는 개발자가 패키지 의존성 문제나 환경 설정 오류로 인�
 - Self-Healing: 설치 중 오류 발생 시 에이전트가 즉시 개입하여 해결책을 제시합니다.
 - Hybrid Intelligence: Google의 Gemini와 Anthropic의 Claude를 교차 활용하여 신뢰도를 높였습니다.
 
-## 📋 Requirements
-- python : 3.11 or higher version
-- google-genai 
-- anthropic
-- python-dotenv
-- rich
+## 🏗️ Project Structure
+```bash
+flux_project/
+├── flux_cli/            # CLI Package
+│   ├── __init__.py
+│   ├── main.py          # Entry Point & main
+│   ├── ai_solver.py     # Gemini 3 
+│   ├── ai_critic.py     # Claude 4.5
+│   └── system_scanner.py # Local Environment Analyzer
+├── pyproject.toml       # Package Configuration
+├── .env                 # API Keys (GitIgnored)
+└── README.md
+```
 
 ## 🤓 Let's Get Started
-1. **가상환경 설정**
-- 가장 먼저 개발, 연구, 실험에 사용할 가상환경을 생성하고 활성화하십시오.
-
-```bash
-# Windows
-python -m venv venv
-.\venv\Scripts\activate
-```
-
-```bash
-# Mac/Linux
-python3 -m venv venv
-source venv/bin/activate
-```
-
-2. **저장소 및 클론 설치**
+1. **저장소 클론**
 ```bash
 git clone https://github.com/JJUNHYEOK/Flux_Project.git
 cd Flux_Project
-pip install -r requirements.txt
 ```
 
 3. **API KEY 설정**
@@ -52,10 +47,16 @@ GOOGLE_API_KEY=your_key_here
 ANTHROPIC_API_KEY=your_key_here
 ```
 
-4. **라이브러리 설치**
-- FLUX와 함께 안전하게 라이브러리를 설치하십시오. 만약 문제가 발생하면 FLUX가 다 해결할 것이고, 문제가 없다면 평소처럼 무탈한 하루일거에요 !
+4. **패키지 설치**
+- FLUX를 cli 형태로 설치하십시오.
 ```bash
-python main.py pip install <라이브러리명>
+pip install -e .
+```
+
+5. **무한으로 즐기기**
+- FLUX와 함께 안전하게 환경을 구성하십시오. 만약 문제가 발생하면 FLUX가 다 해결할 것이고, 문제가 없다면 평소처럼 무탈한 하루일거에요 !
+```bash
+flux pip install <라이브러리명>
 ```
 
 ## 😎 With FLUX

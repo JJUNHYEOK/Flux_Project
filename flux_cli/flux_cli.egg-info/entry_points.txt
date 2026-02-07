@@ -1,0 +1,2 @@
+[console_scripts]
+flux = src.main:main

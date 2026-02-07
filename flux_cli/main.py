@@ -8,9 +8,9 @@ from rich.prompt import Prompt, Confirm
 from rich.status import Status
 
 # 모듈 임포트
-from system_scanner import SystemScanner
-from ai_solver import AISolver
-from ai_critic import AICritic
+from .system_scanner import SystemScanner
+from .ai_solver import AISolver
+from .ai_critic import AICritic
 
 console = Console()
 scanner = SystemScanner()
