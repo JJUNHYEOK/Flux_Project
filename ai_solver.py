@@ -9,7 +9,7 @@ load_dotenv()
 class AISolver:
     def __init__(self):
         self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
-        self.model_name = "gemini-2.5-flash"
+        self.model_name = "gemini-3-flash-preview"
 
     def generate_solution(self, context, error_log):
         prompt = f"""

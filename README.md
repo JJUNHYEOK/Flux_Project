@@ -20,5 +20,10 @@
 - rich
 
 ## example of .env file
+<<<<<<< HEAD
 - GOOGLE_API_KEY=Your GOOGLE_API_KEY
 - ANTHROPIC_API_KEY=Your ANTHROPIC_API_KEY
+=======
+GOOGLE_API_KEY=Your GOOGLE_API_KEY
+ANTHROPIC_API_KEY=Your ANTHROPIC_API_KEY
+>>>>>>> 766b8bd (v1.1)
