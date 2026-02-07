@@ -3,12 +3,12 @@
 <img src="pic/flux_ai_removed.png" width="50%">
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
-![Gemini](https://img.shields.io/badge/Solver-Gemini%202.0%20Flash-4285F4?logo=google)
-![Claude](https://img.shields.io/badge/Critic-Claude%203%20Haiku-D97757?logo=anthropic)
+![Gemini](https://img.shields.io/badge/Solver-Gemini%203%20Flash-4285F4?logo=google)
+![Claude](https://img.shields.io/badge/Critic-Claude%204.5%20Haiku-D97757?logo=anthropic)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 💡 Description
-Flux는 개발자가 패키지 의존성 문제나 환경 설정 오류로 인해 겪는 흐름의 단절을 방지하기 위해 설계된 **AI 기반 로컬 환경 최적화 에이전트**입니다.
+Flux는 개발자가 패키지 의존성 문제나 환경 설정 오류로 인해 겪는 흐름의 단절을 방지하기 위해 설계된 **AI 기반 로컬 환경 최적화 Agent**입니다.
 
 - Fast: 지연 없는 즉각적인 진단과 조치.
 - Local: 사용자 시스템의 현재 상태(Python 버전, OS, 설치된 패키지)를 완벽히 이해합니다.
