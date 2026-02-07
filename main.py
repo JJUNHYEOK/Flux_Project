@@ -37,7 +37,7 @@ def main():
     
     context, _ = scanner.get_context()
     
-    with console.status("[bold cyan]Gemini 1.5 is generating solutions...[/]") as status:
+    with console.status("[bold cyan]Gemini 3 is generating solutions...[/]") as status:
         solutions_data = solver.generate_solution(context, process.stderr)
 
     # 3. Print the solution

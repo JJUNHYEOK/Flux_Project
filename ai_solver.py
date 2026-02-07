@@ -1,4 +1,5 @@
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import os
 import json
 from dotenv import load_dotenv
@@ -7,9 +8,8 @@ load_dotenv()
 
 class AISolver:
     def __init__(self):
-        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-        # Choose the faster model
-        self.model = genai.GenerativeModel('gemini-1.5-flash') 
+        self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+        self.model_name = "gemini-2.5-flash"
 
     def generate_solution(self, context, error_log):
         prompt = f"""
@@ -31,12 +31,21 @@ class AISolver:
                 {{ "id": 2, "command": "...", "explanation": "..." }}
             ]
         }}
-        NO MARKDOWN. ONLY JSON.
         """
         
         try:
-            response = self.model.generate_content(prompt)
-            clean_text = response.text.replace("```json", "").replace("```", "").strip()
-            return json.loads(clean_text)
+            response = self.client.models.generate_content(
+                model=self.model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json"
+                )
+            )
+            
+            return json.loads(response.text)
+            
         except Exception as e:
-            return {"analysis": f"Solver Error: {str(e)}", "solutions": []}
+            return {
+                "analysis": f"API Error: {str(e)}", 
+                "solutions": []
+            }

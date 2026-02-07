@@ -1,4 +1,4 @@
-import anthropic
+# import anthropic
 from openai import OpenAI
 import os
 import json
@@ -80,11 +80,12 @@ class AICritic:
                     {"role": "system", "content": "You are a helpful security assistant. Output in JSON."},
                     {"role": "user", "content": prompt}
                 ],
-                response_format={"type": "json_object"}, 
+                response_format={"type": "json_object"}, # JSON 강제 모드 (핵심!)
                 max_tokens=200,
                 temperature=0
             )
             
+
             content = response.choices[0].message.content
             return json.loads(content)
             
