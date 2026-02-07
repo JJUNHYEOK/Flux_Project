@@ -1,6 +1,6 @@
 # FLUX : Fast Local Unified eXecution
 
-<img src="https://url/image.png](https://github.com/JJUNHYEOK/Flux_Project/blob/master/pic/flux_ai_removed.png" width="400" height="400"/>
+![flux](pic/flux_ai_removed.png)
 
 ## Description
 - Flux는 '흐름'이라는 뜻을 가진 단어로, 본 에이전트를 활용하여 개발 흐름이 끊어지지 않도록 합니다.
