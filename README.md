@@ -15,7 +15,7 @@
 ## Requirements
 - python 3.11 or higher version
 - google-genai 
-- openai
+- anthropic
 - python-dotenv
 - rich
 
