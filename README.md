@@ -1,6 +1,6 @@
 # FLUX : Fast Local Unified eXecution
 
-![flux](pic/flux_ai_removed.png)
+![flux](pic/flux_ai_removed.png){: width="200" height="200"}
 
 ## Description
 - Flux는 '흐름'이라는 뜻을 가진 단어로, 본 에이전트를 활용하여 개발 흐름이 끊어지지 않도록 합니다.
@@ -20,5 +20,6 @@
 - rich
 
 ## example of .env file
-GOOGLE_API_KEY=Your GOOGLE_API_KEY
-OPENAI_API_KEY=Your OPENAI_API_KEY
+- GOOGLE_API_KEY=Your GOOGLE_API_KEY
+- ANTHROPIC_API_KEY=Your ANTHROPIC_API_KEY
+
