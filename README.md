@@ -1,6 +1,7 @@
 # 🚀 FLUX : Fast-Local-Unified eXecution
 
 <img src="pic/flux_ai_removed.png" width="50%">
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)
 ![Gemini](https://img.shields.io/badge/Solver-Gemini%202.0%20Flash-4285F4?logo=google)
 ![Claude](https://img.shields.io/badge/Critic-Claude%203%20Haiku-D97757?logo=anthropic)
@@ -62,3 +63,4 @@ flux pip install <라이브러리명>
 ## 😎 With FLUX
 - FLUX와 함께라면 걱정은 쓸모없는 것입니다. 더 좋은 개발자, 연구자가 되기 위한 준비 완료!
 
+*Built for the 2026 AI+X Solution Challenge.*
