@@ -41,21 +41,21 @@ git clone https://github.com/JJUNHYEOK/Flux_Project.git
 cd Flux_Project
 ```
 
-3. **API KEY 설정**
+2. **API KEY 설정**
 - 프로젝트 루트 폴더에 .env를 생성하고 아래 내용을 입력하십시오.
 ```bash
 GOOGLE_API_KEY=your_key_here
 ANTHROPIC_API_KEY=your_key_here
 ```
 
-4. **패키지 설치**
+3. **패키지 설치**
 - FLUX를 cli 형태로 설치하십시오.
 ```bash
 pip install -e .
 ```
 
-5. **무한으로 즐기기**
-- FLUX와 함께 안전하게 환경을 구성하십시오. 만약 문제가 발생하면 FLUX가 다 해결할 것이고, 문제가 없다면 평소처럼 무탈한 하루일거에요 !
+4. **무한으로 즐기기**
+- 모든 것이 준비되었습니다. FLUX와 함께 안전하게 환경을 구성하십시오. 만약 문제가 발생하면 FLUX가 다 해결할 것이고, 문제가 없다면 평소처럼 무탈한 하루일거에요 !
 ```bash
 flux pip install <라이브러리명>
 ```
