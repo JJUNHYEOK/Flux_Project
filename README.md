@@ -1,4 +1,4 @@
-# 🚀 FLUX : Fast Local Unified eXecution
+# 🚀 FLUX : Fast-Local-Unified eXecution
 
 <img src="pic/flux_ai_removed.png" width="50%">
 
