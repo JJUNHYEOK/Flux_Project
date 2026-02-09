@@ -3,5 +3,6 @@
 *.log
 __pycache__/
 venv/
+flux/
 
 ./srcs/gemini_api/__pycache__
