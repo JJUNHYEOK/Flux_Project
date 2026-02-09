@@ -1,5 +1,7 @@
 import anthropic
 # from openai import OpenAI
+from ollama import chat
+from ollama import ChatResponse
 import os
 import json
 from dotenv import load_dotenv
@@ -7,10 +9,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class AICritic:
-    def __init__(self):
-        self.client = anthropic.Anthropic(
-            api_key=os.getenv("ANTHROPIC_API_KEY")
-        )
+    def __init__(self, local=False, model_name=None):
+        self.local = local
+        self.model_name = model_name
+        if local:
+            self.client = None
+        else:
+            self.client = anthropic.Anthropic(
+                api_key=os.getenv("ANTHROPIC_API_KEY")
+            )
+
 
     def verify_safety(self, command):
         # Checking Sequence
@@ -34,15 +42,30 @@ class AICritic:
         """
 
         try:
-            message = self.client.messages.create(
-                model="claude-haiku-4-5-20251001",
-                max_tokens=200,
-                messages=[{"role": "user", "content": prompt}]
-            )
+
+            if self.local:
+                response: ChatResponse = chat(model=self.model_name, messages=[
+                    {
+                        'role': 'user',
+                        'content': prompt,
+                    },
+                ])
+
+                data = json.loads(response.message.content[7:-4])
+
+            else:
+
+                message = self.client.messages.create(
+                    model="claude-haiku-4-5-20251001",
+                    max_tokens=200,
+                    messages=[{"role": "user", "content": prompt}]
+                )
             
-            # Parsing the response
-            response_text = message.content[0].text
-            return json.loads(response_text)
+                # Parsing the response
+                response_text = message.content[0].text
+                data = json.loads(response_text)
+
+            return data
             
         except Exception as e:
             # if api occurs error

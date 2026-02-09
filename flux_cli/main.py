@@ -14,8 +14,8 @@ from .ai_critic import AICritic
 
 console = Console()
 scanner = SystemScanner()
-solver = AISolver()
-critic = AICritic()
+solver = AISolver(local=True, model_name='gemma3:1b')
+critic = AICritic(local=True, model_name='gemma3:1b')
 
 def main():
     if len(sys.argv) < 2:

@@ -1,5 +1,7 @@
 from google import genai
 from google.genai import types
+from ollama import chat
+from ollama import ChatResponse
 import os
 import json
 from dotenv import load_dotenv
@@ -7,9 +9,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class AISolver:
-    def __init__(self):
-        self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
-        self.model_name = "gemini-3-flash-preview"
+    def __init__(self, local=False, model_name=None):
+        self.local = local
+        if local:
+            self.client = None
+            self.model_name = model_name
+        else:
+            self.client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+            self.model_name = "gemini-3-flash-preview"
 
     def generate_solution(self, context, error_log):
         # 프롬프트는 그대로 두셔도 됩니다.
@@ -35,23 +42,36 @@ class AISolver:
             ]
         }}
         """
-        
-        try:
-            response = self.client.models.generate_content(
-                model=self.model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json"
-                )
-            )
-            
-            data = json.loads(response.text)
 
-            if isinstance(data, list):
-                return {
-                    "analysis": "Analysis generated directly from solutions.",
-                    "solutions": data
-                }
+
+        try:
+
+            if self.local:
+                response: ChatResponse = chat(model=self.model_name, messages=[
+                    {
+                        'role': 'user',
+                        'content': prompt,
+                    },
+                ])
+
+                data = json.loads(response.message.content[7:-4])
+
+            else:
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json"
+                    )
+                )
+                
+                data = json.loads(response.text)
+
+                if isinstance(data, list):
+                    return {
+                        "analysis": "Analysis generated directly from solutions.",
+                        "solutions": data
+                    }
                 
             return data
             
